@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="description"
+        content="AI Doctor - plataforma experimental de assistência à saúde."
+    >
+
+    <title>AI Doctor | Assistente de Saúde</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <header class="topbar">
+
+        <a class="brand" href="#inicio">
+
+            <span class="brand-icon">✚</span>
+
+            <span>
+                <strong>AI Doctor</strong>
+                <small>Assistente de saúde</small>
+            </span>
+
+        </a>
+
+
+        <nav>
+
+            <a href="#inicio">Início</a>
+            <a href="#sintomas">Sintomas</a>
+            <a href="#atendimento">Atendimento</a>
+            <a href="#perfil">Meu perfil</a>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- INÍCIO -->
+
+        <section id="inicio" class="hero">
+
+            <div class="hero-copy">
+
+                <span class="eyebrow">
+                    TECNOLOGIA + SAÚDE
+                </span>
+
+                <h1>
+                    Cuide da sua saúde com mais
+                    <span>informação.</span>
+                </h1>
+
+                <p>
+                    Organize seus dados, faça uma análise inicial
+                    dos sintomas e encontre locais de atendimento próximos.
+                </p>
+
+
+                <div class="hero-actions">
+
+                    <a
+                        class="primary-btn"
+                        href="#sintomas"
+                    >
+                        Analisar sintomas →
+                    </a>
+
+                    <a
+                        class="secondary-btn"
+                        href="#atendimento"
+                    >
+                        Encontrar atendimento
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <div class="hero-panel">
+
+                <div class="pulse-circle">
+                    ✚
+                </div>
+
+                <div class="hero-status">
+
+                    <span class="status-dot"></span>
+
+                    Sistema online
+
+                </div>
+
+                <h3>
+                    Seu cuidado começa aqui.
+                </h3>
+
+                <p>
+                    Ferramentas simples para centralizar
+                    informações de saúde.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- CARDS PRINCIPAIS -->
+
+        <section class="quick-grid">
+
+            <a
+                class="quick-card"
+                href="#sintomas"
+            >
+
+                <span class="quick-icon">
+                    🧠
+                </span>
+
+                <div>
+
+                    <strong>
+                        Analisar sintomas
+                    </strong>
+
+                    <small>
+                        Faça uma avaliação inicial
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+            <a
+                class="quick-card"
+                href="#atendimento"
+            >
+
+                <span class="quick-icon">
+                    📍
+                </span>
+
+                <div>
+
+                    <strong>
+                        Encontrar atendimento
+                    </strong>
+
+                    <small>
+                        Pesquise locais próximos
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+
+            <a
+                class="quick-card"
+                href="#perfil"
+            >
+
+                <span class="quick-icon">
+                    👤
+                </span>
+
+                <div>
+
+                    <strong>
+                        Meu perfil
+                    </strong>
+
+                    <small>
+                        Seus dados pessoais
+                    </small>
+
+                </div>
+
+                <b>→</b>
+
+            </a>
+
+        </section>
+
+
+        <!-- SINTOMAS -->
+
+        <section
+            id="sintomas"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        ASSISTENTE
+                    </span>
+
+                    <h2>
+                        Como você está se sentindo?
+                    </h2>
+
+                    <p>
+                        Descreva seus sintomas para receber
+                        uma orientação inicial.
+                    </p>
+
+                </div>
+
+                <span class="section-number">
+                    01
+                </span>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <label for="campoSintomas">
+                    Seus sintomas
+                </label>
+
+                <textarea
+                    id="campoSintomas"
+                    placeholder="Ex.: Estou com dor de cabeça, febre e cansaço..."
+                ></textarea>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label for="duracao">
+                            Há quanto tempo?
+                        </label>
+
+                        <select id="duracao">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Hoje
+                            </option>
+
+                            <option>
+                                Há 2 ou 3 dias
+                            </option>
+
+                            <option>
+                                Há mais de uma semana
+                            </option>
+
+                            <option>
+                                Não sei informar
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="intensidade">
+                            Intensidade
+                        </label>
+
+                        <select id="intensidade">
+
+                            <option value="">
+                                Selecione
+                            </option>
+
+                            <option>
+                                Leve
+                            </option>
+
+                            <option>
+                                Moderada
+                            </option>
+
+                            <option>
+                                Forte
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn full"
+                    onclick="analisarSintomas()"
+                >
+                    Analisar sintomas
+                </button>
+
+
+                <div
+                    id="resultadoSintomas"
+                    class="result-box hidden"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ATENDIMENTO -->
+
+        <section
+            id="atendimento"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        LOCALIZAÇÃO
+                    </span>
+
+                    <h2>
+                        Encontre atendimento
+                    </h2>
+
+                    <p>
+                        Pesquise hospitais, clínicas e consultórios.
+                    </p>
+
+                </div>
+
+                <span class="section-number">
+                    02
+                </span>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="search-header">
+
+                    <div>
+
+                        <label for="regiao">
+                            Cidade ou região
+                        </label>
+
+                        <input
+                            id="regiao"
+                            type="text"
+                            placeholder="Ex.: Blumenau, SC"
+                        >
+
+                    </div>
+
+
+                    <button
+                        class="location-btn"
+                        onclick="usarLocalizacao()"
+                    >
+                        📍 Usar minha localização
+                    </button>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label for="tipoAtendimento">
+                            O que você procura?
+                        </label>
+
+                        <select id="tipoAtendimento">
+
+                            <option value="all">
+                                Todos os atendimentos
+                            </option>
+
+                            <option value="doctors">
+                                Médicos / consultórios
+                            </option>
+
+                            <option value="clinic">
+                                Clínicas
+                            </option>
+
+                            <option value="hospital">
+                                Hospitais
+                            </option>
+
+                            <option value="pharmacy">
+                                Farmácias
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="raio">
+                            Raio de busca
+                        </label>
+
+                        <select id="raio">
+
+                            <option value="5000">
+                                5 km
+                            </option>
+
+                            <option
+                                value="10000"
+                                selected
+                            >
+                                10 km
+                            </option>
+
+                            <option value="20000">
+                                20 km
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn full"
+                    onclick="buscarAtendimento()"
+                >
+                    🔎 Buscar atendimento
+                </button>
+
+
+                <div
+                    id="resultadoAtendimento"
+                    class="results-list"
+                >
+
+                    <div class="empty-state">
+
+                        <span>📍</span>
+
+                        <strong>
+                            Nenhuma busca realizada
+                        </strong>
+
+                        <p>
+                            Informe uma cidade ou use sua localização.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- PERFIL -->
+
+        <section
+            id="perfil"
+            class="section"
+        >
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="eyebrow">
+                        SEUS DADOS
+                    </span>
+
+                    <h2>
+                        Meu perfil
+                    </h2>
+
+                    <p>
+                        Cadastre informações básicas.
+                    </p>
+
+                </div>
+
+                <span class="section-number">
+                    03
+                </span>
+
+            </div>
+
+
+            <div class="feature-card">
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label for="nome">
+                            Nome
+                        </label>
+
+                        <input
+                            id="nome"
+                            type="text"
+                            placeholder="Seu nome"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="idade">
+                            Idade
+                        </label>
+
+                        <input
+                            id="idade"
+                            type="number"
+                            min="1"
+                            max="120"
+                            placeholder="Sua idade"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-row">
+
+                    <div>
+
+                        <label for="email">
+                            E-mail
+                        </label>
+
+                        <input
+                            id="email"
+                            type="email"
+                            placeholder="seu@email.com"
+                        >
+
+                    </div>
+
+
+                    <div>
+
+                        <label for="cidade">
+                            Cidade
+                        </label>
+
+                        <input
+                            id="cidade"
+                            type="text"
+                            placeholder="Sua cidade"
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="primary-btn full"
+                    onclick="salvarPerfil()"
+                >
+                    Salvar perfil
+                </button>
+
+
+                <div
+                    id="dadosUsuario"
+                    class="profile-result hidden"
+                ></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- SOBRE -->
+
+        <section class="about-card">
+
+            <div class="about-icon">
+                🩺
+            </div>
+
+            <div>
+
+                <span class="eyebrow">
+                    SOBRE O PROJETO
+                </span>
+
+                <h2>
+                    AI Doctor
+                </h2>
+
+                <p>
+                    Projeto experimental criado para estudar
+                    desenvolvimento web, integração com APIs,
+                    armazenamento local e experiências digitais
+                    relacionadas à saúde.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- AVISO -->
+
+        <section class="warning">
+
+            <strong>
+                ⚠️ Aviso importante
+            </strong>
+
+            <p>
+                O AI Doctor é um projeto educacional.
+                A análise de sintomas não é diagnóstico médico.
+                Em situações graves ou urgentes, procure um
+                serviço de emergência ou profissional de saúde.
+            </p>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+
+        <strong>
+            AI Doctor
+        </strong>
+
+        <span>
+            Projeto experimental • 2026
+        </span>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
