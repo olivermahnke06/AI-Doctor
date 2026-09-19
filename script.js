@@ -832,6 +832,15 @@ function mostrarLocais(locais) {
             const numero =
                 local.tags?.["addr:housenumber"] ||
                 "";
+            const telefone =
+                local.tags?.phone ||
+                local.tags?.["contact:phone"] ||
+                "";
+
+            const site =
+                local.tags?.website ||
+                local.tags?.["contact:website"] ||
+                 "";    
 
 
             const latitude =
@@ -872,6 +881,27 @@ function mostrarLocais(locais) {
                             ${escaparHTML(rua)}
                             ${escaparHTML(numero)}
                         </p>
+
+                        ${
+                          telefone
+                          ? `<p>📞 ${escaparHTML(telefone)}</p>`
+                          : ""
+                        }
+
+                        ${
+                           site
+                            ? `<p>
+                           🌐
+                         <a
+                href="${escaparHTML(site)}"
+                target="_blank"
+                rel="noopener noreferrer"
+            >
+                Site oficial
+            </a>
+        </p>`
+        : ""
+}
 
                     </div>
 
